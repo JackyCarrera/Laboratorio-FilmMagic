@@ -272,7 +272,7 @@ public class catalogo extends javax.swing.JInternalFrame {
             pst.setString(8, txtvencimiento.getText().trim());
             pst.executeUpdate();
             
-            txtnombre.setText("");
+          
             txtproducto.setText("");
             txttipo.setText("");
             txtgenero.setText("");

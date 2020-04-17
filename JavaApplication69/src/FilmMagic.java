@@ -20,6 +20,8 @@ public class FilmMagic extends javax.swing.JFrame {
     private Modificacion ventana;
     private Eliminacion ventana2;
     private catalogo ventana3;
+    private Recibo recibo1;
+
     public FilmMagic() {
         initComponents();
         jDesktopPane1.setBorder(new imagenfondo());
@@ -44,6 +46,7 @@ public class FilmMagic extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -109,6 +112,9 @@ public class FilmMagic extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Recibo");
+        jMenu2.add(jMenuItem6);
 
         jMenuBar1.add(jMenu2);
 
@@ -212,8 +218,8 @@ public class FilmMagic extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
+    public static javax.swing.JDesktopPane jDesktopPane1;
+    public javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
@@ -222,5 +228,6 @@ public class FilmMagic extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }

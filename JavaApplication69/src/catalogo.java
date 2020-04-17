@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Jacky
  */
 public class catalogo extends javax.swing.JInternalFrame {
-private Recibo recibo1;
+
     /**
      * Creates new form catalogo
      */
@@ -262,7 +262,7 @@ private Recibo recibo1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Se declararon variables para tabla:
         String Nom, produ,tip,gen,aut,entre, venci,pre;
         Nom=txtnombre.getText();
         produ=txtproducto.getText();
@@ -272,6 +272,7 @@ private Recibo recibo1;
         entre=txtentrega.getText();
         venci=txtvencimiento.getText();
         pre=txtprecio.getText();
+        //Codigo para introducir datos a una tabla
           DefaultTableModel modelo=(DefaultTableModel)
        tabla.getModel();
     Object [] fila=new  Object[8];
@@ -285,6 +286,7 @@ private Recibo recibo1;
         fila[7]=String.valueOf(pre);;
         modelo.addRow(fila);
         tabla.setModel(modelo);
+        //Codigo que registra datos a la base de datos en tabla (registropelis)
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into registropelis values(?,?,?,?,?,?,?,?)");
@@ -319,7 +321,7 @@ private Recibo recibo1;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Codigo para Calcular el Total de los productos de la tabla:
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         float t2=0; String t0="";
         for(int i=0; i<modelo.getRowCount(); i++)
@@ -331,15 +333,16 @@ private Recibo recibo1;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        //Ingresa datos a la base de datos, tabla (Recibo)
+        //Inciso 3 de los 8:
        try{
-           for(int i=0; i<tabla.getRowCount();++i)
+           for(int i=0; i<tabla.getRowCount();++i)// se Ingresaran los datos de la tabla
                
            {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into Recibo values(?,?,?,?,?,?,?,?,?)");
-            //pst.setString(1, "0");
-            pst.setString(1, tabla.getValueAt(i,0).toString());
+            
+            pst.setString(1, tabla.getValueAt(i,0).toString());//Codigo para ingresar datos desde la tabla
             pst.setString(2, tabla.getValueAt(i,1).toString());
             pst.setString(3, tabla.getValueAt(i,2).toString());
             pst.setString(4, tabla.getValueAt(i,3).toString());

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import java.sql.*;
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;//Conectar a la base de datos MYSQL
 /**
  *
  * @author Jacky
@@ -215,23 +215,23 @@ public class Registro extends javax.swing.JInternalFrame {
         
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into clientes2 values(?,?,?,?,?,?)");
-            //pst.setString(1, "0");
-            pst.setString(1, txtnombre.getText().trim());
-            pst.setString(2, txtapellidos.getText().trim());
-            pst.setString(3, txtcorreo.getText().trim());
-            pst.setString(4, txtcontra.getText().trim());
-            pst.setString(5, txttarjeta.getText().trim());
-            pst.setString(6, txtcodigo.getText().trim());
+            PreparedStatement pst = cn.prepareStatement("insert into clientes2 values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
+           
+            pst.setString(1, txtnombre.getText().trim());//Nombre
+            pst.setString(2, txtapellidos.getText().trim());//Apellidos
+            pst.setString(3, txtcorreo.getText().trim());//Correo
+            pst.setString(4, txtcontra.getText().trim());//Contraseña
+            pst.setString(5, txttarjeta.getText().trim());//Numero de Tarjeta
+            pst.setString(6, txtcodigo.getText().trim());//Codigo de Seguridad
             pst.executeUpdate();
             
-            txtnombre.setText("");
-            txtapellidos.setText("");
-            txtcorreo.setText("");
-            txtcontra.setText("");
-            txttarjeta.setText("");
-            txtcodigo.setText("");
-            label1.setText("La cuenta se registró");
+            txtnombre.setText("");//Se limpia el txt
+            txtapellidos.setText("");//Se limpia el txt
+            txtcorreo.setText("");//Se limpia el txt
+            txtcontra.setText("");//Se limpia el txt
+            txttarjeta.setText("");//Se limpia el txt
+            txtcodigo.setText("");//Se limpia el txt
+            label1.setText("La cuenta se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
 
         }catch (Exception e){
             e.printStackTrace();

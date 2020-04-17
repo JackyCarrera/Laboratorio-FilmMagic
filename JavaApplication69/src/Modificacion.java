@@ -209,16 +209,16 @@ public class Modificacion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+//Este codigo busca datos en la base de datos
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/registrof1", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from clientes2 where Correo = ?");
-            pst.setString(1, buscar.getText().trim());
+            PreparedStatement pst = cn.prepareStatement("select * from clientes2 where Correo = ?");//Selecciona la tabla clientes2
+            pst.setString(1, buscar.getText().trim());//el dato que se ingrese se buscara en la tabla
             ResultSet rs = pst.executeQuery();
 
             if(rs.next()){
             
-                txtnombre1.setText(rs.getString("Nombre"));
+                txtnombre1.setText(rs.getString("Nombre"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
                 txtapellidos1.setText(rs.getString("Apellidos"));
                 txtcontra1.setText(rs.getString("Contra"));
                 txtcorreo1.setText(rs.getString("Correo"));
@@ -227,7 +227,7 @@ public class Modificacion extends javax.swing.JInternalFrame {
                 
                 
             } else {
-                JOptionPane.showMessageDialog(null, "Persona no registrada.");
+                JOptionPane.showMessageDialog(null, "Persona no registrada.");//Si no se encontro el dato
             }
 
         }catch (Exception e){
@@ -236,20 +236,20 @@ public class Modificacion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Este codigo modifica los datos de la base de datos seleccionada:
          // TODO add your handling code here:
         try {
-            String Correo = buscar.getText().trim();
+            String ID = buscar.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update clientes2 set Nombre = ?, Apellidos = ?,Contra = ?, Correo = ? ,Tarjeta = ?, Codigo = ?");
+            PreparedStatement pst = cn.prepareStatement("update clientes2 set Nombre = ?, Apellidos = ?,Correo = ?,Contra = ? ,Tarjeta = ?, Codigo = '"+ ID);
             
             pst.setString(1, txtnombre1.getText().trim());
             pst.setString(2, txtapellidos1.getText().trim());
             pst.setString(3, txtcorreo1.getText().trim());
-            pst.setString(4, txtcontra1.getText().trim());
-            pst.setString(5, txttarjeta1.getText().trim());
-            pst.setString(6, txtcodigo1.getText().trim());
+            pst.setString(3, txtcontra1.getText().trim());
+            pst.setString(4, txttarjeta1.getText().trim());
+            pst.setString(5, txtcodigo1.getText().trim());
             pst.executeUpdate();
             label2.setText("Modificación exitosa.");
         }catch (Exception e) {

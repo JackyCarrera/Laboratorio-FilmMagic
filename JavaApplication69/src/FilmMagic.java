@@ -16,16 +16,16 @@ public class FilmMagic extends javax.swing.JFrame {
     /**
      * Creates new form FilmMagic
      */
-    private Registro NuevaVentana;
+    private Registro NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
     private Modificacion ventana;
     private Eliminacion ventana2;
     private catalogo ventana3;
-    private Recibo recibo1;
+   
 
     public FilmMagic() {
         initComponents();
         jDesktopPane1.setBorder(new imagenfondo());
-        this.setExtendedState(FilmMagic.MAXIMIZED_BOTH);
+        this.setExtendedState(FilmMagic.MAXIMIZED_BOTH);//Se puso una imagen de Fondo en el JDesktopPane
         
     }
 
@@ -41,14 +41,13 @@ public class FilmMagic extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        Registrocliente = new javax.swing.JMenuItem();
+        ModificacionC = new javax.swing.JMenuItem();
+        EliminarCuenta = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        IngresoalCatalogo = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        SalirPrograma = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,29 +74,29 @@ public class FilmMagic extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("Obtener Membresia");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Registrocliente.setText("Obtener Membresia");
+        Registrocliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                RegistroclienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(Registrocliente);
 
-        jMenuItem3.setText("Modificar tu cuenta");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        ModificacionC.setText("Modificar tu cuenta");
+        ModificacionC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                ModificacionCActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(ModificacionC);
 
-        jMenuItem4.setText("Eliminar cuenta");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        EliminarCuenta.setText("Eliminar cuenta");
+        EliminarCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                EliminarCuentaActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(EliminarCuenta);
 
         jMenuBar1.add(jMenu1);
 
@@ -105,16 +104,13 @@ public class FilmMagic extends javax.swing.JFrame {
         jMenu2.setText("Catalogo");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem5.setText("Ingresar al catalogo");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        IngresoalCatalogo.setText("Ingresar al catalogo");
+        IngresoalCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                IngresoalCatalogoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Recibo");
-        jMenu2.add(jMenuItem6);
+        jMenu2.add(IngresoalCatalogo);
 
         jMenuBar1.add(jMenu2);
 
@@ -122,13 +118,13 @@ public class FilmMagic extends javax.swing.JFrame {
         jMenu3.setText("Salir");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem2.setText("Salir");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        SalirPrograma.setText("Salir");
+        SalirPrograma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                SalirProgramaActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem2);
+        jMenu3.add(SalirPrograma);
 
         jMenuBar1.add(jMenu3);
 
@@ -148,35 +144,35 @@ public class FilmMagic extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void RegistroclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroclienteActionPerformed
         // TODO add your handling code here:
         NuevaVentana = new Registro();
-        jDesktopPane1.add(NuevaVentana);
+        jDesktopPane1.add(NuevaVentana);//Codigo para hacer visible JinternalFrame(Registro)
         
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_RegistroclienteActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void IngresoalCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoalCatalogoActionPerformed
         // TODO add your handling code here:
         ventana3 = new catalogo();
-        jDesktopPane1.add(ventana3);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+        jDesktopPane1.add(ventana3);//Codigo para hacer visible JinternalFrame(Catalogo)
+    }//GEN-LAST:event_IngresoalCatalogoActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void SalirProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirProgramaActionPerformed
          // TODO add your handling code here:
-         dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+         dispose();//Codigo  para  salir del Programa
+    }//GEN-LAST:event_SalirProgramaActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void ModificacionCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificacionCActionPerformed
         // TODO add your handling code here:
         ventana = new Modificacion();
-        jDesktopPane1.add(ventana);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        jDesktopPane1.add(ventana);//Codigo para hacer visible JinternalFrame(Modificacion)
+    }//GEN-LAST:event_ModificacionCActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void EliminarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCuentaActionPerformed
         // TODO add your handling code here:
         ventana2 = new Eliminacion();
-        jDesktopPane1.add(ventana2);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+        jDesktopPane1.add(ventana2);//Codigo para hacer visible JinternalFrame(Eliminacion)
+    }//GEN-LAST:event_EliminarCuentaActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         // TODO add your handling code here:
@@ -218,16 +214,15 @@ public class FilmMagic extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem EliminarCuenta;
+    private javax.swing.JMenuItem IngresoalCatalogo;
+    private javax.swing.JMenuItem ModificacionC;
+    private javax.swing.JMenuItem Registrocliente;
+    private javax.swing.JMenuItem SalirPrograma;
     public static javax.swing.JDesktopPane jDesktopPane1;
     public javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }

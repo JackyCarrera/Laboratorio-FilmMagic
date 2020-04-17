@@ -210,7 +210,7 @@ public class Eliminacion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Codigo para buscar los datos en la base de datos:
         try {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/registrof1", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from clientes2 where Correo = ?");
@@ -232,7 +232,7 @@ public class Eliminacion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Codigo para eliminar datos de la base de datos:
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/registrof1", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from clientes2 where Correo = ?");
